@@ -1,43 +1,46 @@
 import java.util.Random;
 import java.util.Scanner;
-class Homework57{
-public static void main(String[]args){
-	Random rand=new Random();
-	int Zagadanoechislo=rand.nextInt(101);
-	int Popitki=0;
-	Scanner in= new Scanner(System.in);
-	int Ugaday;
-	boolean ugadal = false;
-		System.out.println ("i gessed from 1 till 100 "+Zagadanoechislo);
- while (ugadal==false){
-	 System.out.println("type number");
-	  Ugaday=in.nextInt();
-	  Popitki++;
-	  
-	  if(Zagadanoechislo==Ugaday){
-		  ugadal=true;
-	  }
-	  
-	 else if (Zagadanoechislo<Ugaday){
-		 Ugaday=in.nextInt();
-		 System.out.println("Try again - guessed number is bigger " + Ugaday);
-	 } 
-		 else if (Zagadanoechislo>Ugaday){
-		 Ugaday=in.nextInt();
-		 System.out.println("Try again - guessed number is Less " + Ugaday); 
-		 
-	 }
-	 
-	 
-	 } 
- 	if (Popitki<=3);{
-	System.out.print ("You guessed a number, but looks like you're a cheater!");
-	if (Popitki>=3 || Popitki<=7);
-	System.out.print ("Congrats, you guessed a number!");
-	if (Popitki>=7);
-	System.out.print ("You guessed a number, but can be better!");
-
+ 
+public class Homework57 {
+     
+    public static void main (String[] args) {
+        Random rand = new Random();
+        int numberToGuess = rand.nextInt(101);
+        int numberOfTries = 0;
+        Scanner input = new Scanner(System.in);
+        int guess;
+        boolean win = false;
+        System.out.println( "- I guessed number between 1 and 1000" );
+         
+        while (win == false) {
+         
+            System.out.println( "Type number:" );
+            guess = input.nextInt();
+             
+            numberOfTries++;
+             
+            if (guess == numberToGuess) {
+                win = true;
+            } 
+            else if (guess < numberToGuess) {
+                System.out.println("- Your guess is too low\n");
+            }
+            else if (guess > numberToGuess) {
+                System.out.println("- Your guess is too high\n");
+            }
+        }  
+        if (win == true) 
+		{
+			 	if (numberOfTries<=3){
+		System.out.print ("You guessed a number, but looks like you're a cheater!"+numberOfTries);
+				}
+	else if (numberOfTries>=3 & numberOfTries<=7){
+	System.out.print ("Congrats, you guessed a number!"+numberOfTries);
+	}
+		else if(numberOfTries>7){
+		System.out.print ("You guessed a number, but can be better!"+numberOfTries);
+	}
+		}
+		
+            }
 }
-}
-}
-
