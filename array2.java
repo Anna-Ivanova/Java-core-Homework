@@ -3,9 +3,6 @@ class array2{
 
 int[] array = { 50, 60, 30, 20, 10};
 
-    int[] array = { 50, 60, 30, 20, 10};
-
-
     for(int i=0; i<array.length;i++){	
     	System.out.print(array[i]+" ");}
     	System.out.println(" ");
@@ -16,7 +13,7 @@ int[] array = { 50, 60, 30, 20, 10};
 	array[0]=0;
     	for(int i=0;i<array.length;i++){
     		
-    		System.out.print(array[i]+" ");
+    	System.out.print(array[i]+" ");
     	}
 }
 }
