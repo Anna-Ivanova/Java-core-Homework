@@ -7,10 +7,14 @@ int[] array = { 50, 60, 30, 20, 10};
     	System.out.print(array[i]+" ");}
     	System.out.println(" ");
    
-    for(int i=array.length-1; i>=0;i--){
+    for(int i=0; i<(array.length-1)/2;i++){
+    int temp=a[i];
+	a[i]=a[a.length-1-i];
+	a[a.length-1-i]=temp;
     
-    System.out.print(array[i]+" ");
     }
-    	
+   for(int i=0; i<array.length;i++){	
+    	System.out.print(array[i]+" ");}
+    	System.out.println(" "); 	
 }
 }
