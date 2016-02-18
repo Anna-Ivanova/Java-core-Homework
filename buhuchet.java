@@ -14,44 +14,49 @@ public class buhuchet {
         empl[7] = new Employee(12353, "BOYKO", "VADIM", 2000);
         empl[8] = new Employee(12354, "VASILIEVA", "VIKA", 1500);
         empl[9] = new Employee(12355, "KOSTIN", "LEV", 1000);
-        System.out.println("INN   "+ " FAMILIYA    "+" IMYA   "+"ZARPLATA   ");
+        System.out.println("INN   " + " FAMILIYA    " + " IMYA   " + "ZARPLATA   ");
 
-        for (int i=0;i<empl.length;i++){
+        for (int i = 0; i < empl.length; i++) {
             empl[i].show();
         }
-        empl[0].setSalary(1500);
-        empl[1].setSalary(1600);
-        empl[2].setSalary(3000);
-        empl[3].setSalary(1000);
-        empl[4].setSalary(1200);
-        empl[5].setSalary(800);
-        empl[6].setSalary(500);
-        empl[7].setSalary(2000);
-        empl[8].setSalary(1500);
-        empl[9].setSalary(1000);
-        double sum=0;
-        int indexmax=0;
-        int indexmin=0;
-        double min=empl[0].getSalary();
-        double max=empl[0].getSalary();
-        for(int i=0;i<empl.length;i++){
-           sum+=empl[i].getSalary();
-            }
-        for (int i=1;i<empl.length;i++){
-            if(empl[i].getSalary()> max){
-                max=empl[i].getSalary();
-                indexmax=i;
-            }
-            if(empl[i].getSalary()<min){
-                min=empl[i].getSalary();
-                indexmin=i;
-            }
-        }
+        int maxz=maxzp(empl);
+        int minz=minzp(empl);
+        System.out.println("Fond zarplaty= "+ Sumcount(empl));
         System.out.println("Mazhor nayden - eto ");
-        empl[indexmax].show();
-        System.out.println("Bednyazhka nayden - eto ");
-        empl[indexmin].show();
-       System.out.println("Fond zarplaty= "+ sum);
+        empl[maxz].show();
+        empl[minz].show();
     }
 
+    public static double Sumcount(Employee[] empl) {
+        double sum = 0;
+        for (int i = 0; i < empl.length; i++) {
+            sum += empl[i].getSalary();
+        }
+        return sum;
+    }
+
+    public static int maxzp(Employee[] empl) {
+        double max = empl[0].getSalary();
+        int indexmax = 0;
+        for (int i = 1; i < empl.length; i++) {
+            if (empl[i].getSalary() > max) {
+                max = empl[i].getSalary();
+                indexmax = i;
+
+            }
+        }
+        return indexmax;
+    }
+
+    public static int minzp(Employee[] empl) {
+        int indexmin = 0;
+        double min = empl[0].getSalary();
+        for (int i = 1; i < empl.length; i++) {
+            if (empl[i].getSalary() < min) {
+                min = empl[i].getSalary();
+                indexmin = i;
+            }
+        }
+        return indexmin;
+    }
 }
